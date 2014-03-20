@@ -27,8 +27,6 @@ namespace Reversi.AI1
                 }
             }
 
-            System.Threading.Thread.Sleep(1000*40);
-
             if(placeable.Count == 0) return new int[] { -1, -1 };
 
             return placeable[rand.Next(placeable.Count)];
