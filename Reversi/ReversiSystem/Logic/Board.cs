@@ -129,6 +129,9 @@ namespace Reversi.ReversiSystem.Logic
             return GetPutParam(x, y, s, true);
         }
 
+        /// <summary>
+        /// パスします。
+        /// </summary>
         public void Pass()
         {
             Hand++;
