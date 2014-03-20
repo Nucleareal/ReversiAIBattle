@@ -26,20 +26,28 @@ namespace Reversi.ReversiSystem.Launcher
         /// </summary>
         public void Run()
         {
+            var rand = new Random();
+
             var board = new Board();
             board.Init();
 
             var cc = new ChessClock();
             cc.Init();
 
-            var ai = new AIInterface[] { new ReversiAI1(), new ReversiAI2() };
+            var ai1 = new ReversiAI1();
+            var ai2 = new ReversiAI2();
+            int forestalling = rand.Next(2);
+
+            var ai = forestalling == 0 ? new AIInterface[] { ai1, ai2 } : new AIInterface[] { ai2, ai1 };
+
+            Console.WriteLine("Started battle: {0} VS {1}", ai[0].Name, ai[1].Name);
+
+            Console.WriteLine("Forestalling is {0}", ai[0].Name);
 
             foreach (var a in ai) cc.Register(a);
 
 
             var i = 0;
-
-            Console.WriteLine("Started battle: {0} VS {1}", ai[0].Name, ai[1].Name);
 
             board.PutBoard();
 
@@ -73,9 +81,9 @@ namespace Reversi.ReversiSystem.Launcher
 
             var arr = board.CountStones();
 
-            //Console.WriteLine("Black:{0} White:{1}", arr[0], arr[1]);
+            Console.WriteLine("Black:{0} White:{1}", arr[0], arr[1]);
 
-            Console.WriteLine(board.Winner);
+            Console.WriteLine(string.Format("{0} ({1})", board.Winner, arr[0] == arr[1] ? "" : arr[0] > arr[1] ? ai[0].Name : ai[1].Name));
         }
     }
 }
