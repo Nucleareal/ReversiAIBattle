@@ -42,6 +42,10 @@ namespace Reversi.AI1
                 }
             }
 
+            Console.WriteLine(string.Format("Selected ({0}, {1}) => {2}", result[0], result[1], max));
+
+            GC.Collect(); //メモリがやばい
+
             return result;
         }
 
@@ -51,8 +55,15 @@ namespace Reversi.AI1
 
             while (_queue.Count != 0 && _queue.Peek().Depth > 0)
             {
-                var node = _queue.Dequeue();
-                Eval(node, me);
+                try
+                {
+                    var node = _queue.Dequeue();
+                    Eval(node, me);
+                }
+                catch(OutOfMemoryException e)
+                {
+                    break;
+                }
             }
         }
 
