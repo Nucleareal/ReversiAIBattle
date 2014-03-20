@@ -55,6 +55,7 @@ namespace Reversi.ReversiSystem.Launcher
                 {
                     Console.WriteLine(" {0} Passed", ai[i % 2].Name);
 
+                    board.Pass();
                     passcount++;
                     if (passcount == 2) break;
                 }

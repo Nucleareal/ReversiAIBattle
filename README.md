@@ -5,6 +5,9 @@ ReversiAIBattle
 
 リバーシAIをバトルさせるためのやつ
 
+## 注意
+バグフィックス中
+
 ## どうやって使うの
 1. Reversi.AI1.ReversiAI1.cs、またはReversi.AI2.ReversiAI2.csを改変します。
 2. 起動すればバトルが始まります。

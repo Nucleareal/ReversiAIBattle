@@ -129,6 +129,11 @@ namespace Reversi.ReversiSystem.Logic
             return GetPutParam(x, y, s, true);
         }
 
+        public void Pass()
+        {
+            Hand++;
+        }
+
         /// <summary>
         /// 着手して盤面を変更する、または着手した際の情報を調査します。
         /// </summary>
