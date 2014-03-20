@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="AI1\ReversiAI1.cs" />
     <Compile Include="AI2\ReversiAI2.cs" />
-    <Compile Include="ReversiSystem\Debug\Logger.cs" />
+    <Compile Include="ReversiSystem\Logger\Logger.cs" />
     <Compile Include="ReversiSystem\Launcher\Launcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReversiSystem\Logic\AIInterface.cs" />
