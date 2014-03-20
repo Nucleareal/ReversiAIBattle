@@ -5,11 +5,11 @@ ReversiAIBattle
 リバーシAIをバトルさせるためのやつ
 
 ## どうやって使うの
-1. Reversi.AI1.ReversiAI1.cs、またはReversi.AI2.ReversiAI2.csを改変します。
+1. `Reversi.AI1.ReversiAI1.cs`、または`Reversi.AI2.ReversiAI2.cs`を改変します。
 2. 起動すればバトルが始まります。
 
 ### は？
-Board.csのクラスとメソッドに必要最低限のマニュアル書いたから頑張ってAI作って
+`Board.cs`のクラスとメソッドに必要最低限のマニュアル書いたから頑張ってAI作って
 
 ## ルールは
 * 各AIの持ち時間は5分
