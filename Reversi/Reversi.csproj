@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI1\ByHandCount.cs" />
     <Compile Include="AI1\ReversiAI1.cs" />
     <Compile Include="AI2\ReversiAI2.cs" />
     <Compile Include="ReversiSystem\Logger\Logger.cs" />

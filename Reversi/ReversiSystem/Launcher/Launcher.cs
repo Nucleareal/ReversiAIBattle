@@ -34,7 +34,7 @@ namespace Reversi.ReversiSystem.Launcher
             var cc = new ChessClock();
             cc.Init();
 
-            var ai1 = new ReversiAI1();
+            var ai1 = new ByHandCount();
             var ai2 = new ReversiAI2();
             int forestalling = rand.Next(2);
 

@@ -31,7 +31,14 @@ namespace Reversi.ReversiSystem.Logic
         /// <param name="original">元となる盤面</param>
         public Board(Board original)
         {
-            this._board = original._board;
+            Init();
+            for (int y = 0; y < REnvironment.BoardY; y++)
+            {
+                for (int x = 0; x < REnvironment.BoardX; x++)
+                {
+                    PutStone(x, y, original.Ref(x, y));
+                }
+            }
             this.Hand = original.Hand;
             this.Living = original.Living;
             this.ForceLoser = original.ForceLoser;
@@ -372,6 +379,20 @@ namespace Reversi.ReversiSystem.Logic
         {
             private set;
            get;
+        }
+
+        public List<int[]> PlaceablePoints
+        {
+            get
+            {
+                var list = new List<int[]>();
+
+                for(int y = 0; y < REnvironment.BoardY; y++)
+                    for (int x = 0; x < REnvironment.BoardX; x++)
+                        if (GetPutParam(x, y, HandStone).CanPlace)
+                            list.Add(new int[] { x, y });
+                return list;
+            }
         }
 
         /// <summary>
